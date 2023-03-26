@@ -40,8 +40,10 @@ main{
 }
 
 main div{
-    width: 150px;
-    height: 150px;
+    height: 50%;
+    width: 20%;
+    min-width: 100px;
+    min-height: 100px;
 }
 
 .result div img, main div img{
