@@ -1,15 +1,34 @@
 let x = 0;
-let b;
+let b, d;
 function clicked(a, c) {
-    if(b == null) { }
-    else {b.style.scale = "0";}
-    x = Math.floor(Math.random() * 3);
+
     c.classList.toggle("tap");
+
     const interval = setInterval (() => {
         c.classList.toggle("tap");
         clearInterval(interval);
+
     }, 300);
 
-    b = document.getElementById(x);
-    b.style.scale = "1";
+    x = Math.floor(Math.random() * 3);
+
+    if(b == null) {
+        b = document.getElementById(x);
+        b.style.scale = "1";
+    }
+    else {
+        let i = 0;
+        b.style.scale = "0";
+        const interval2 = setInterval (() => {
+
+            b = document.getElementById(x);
+            b.style.scale = "1";
+
+            if(i >= 1) {
+                clearInterval(interval2);
+            }
+            i += 1;
+
+        }, 300);
+    }
 }
