@@ -1,15 +1,15 @@
 let x = 0;
-let b, d;
+let b;
 function clicked(a, c) {
     if(b == null) { }
-    else {
-        b.style.opacity = "0";
-        d.classList.toggle("tap");
-    }
+    else {b.style.scale = "0";}
     x = Math.floor(Math.random() * 3);
-    b = document.getElementById(x);
-    b.style.opacity = "1";
     c.classList.toggle("tap");
-    d = c;
-    clearInterval(0.3)
+    const interval = setInterval (() => {
+        c.classList.toggle("tap");
+        clearInterval(interval);
+    }, 300);
+
+    b = document.getElementById(x);
+    b.style.scale = "1";
 }
